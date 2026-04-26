@@ -23,6 +23,7 @@ It demonstrates how to design and implement a scalable, production-ready automat
 
 ## 🏗️ Architecture
 
+```
 NetBox → Data Source
 ↓
 Python Automation Layer
@@ -30,22 +31,71 @@ Python Automation Layer
 Jinja2 Templates
 ↓
 Network Devices (via Netmiko / Paramiko)
-
+```
 ---
 
 ## 📂 Project Structure
 
 ```
-automation/
-  ├── vendors/        # Vendor-specific logic
-  ├── services/       # Network services (VLAN, BGP, etc.)
-  ├── workflows/      # End-to-end automation use cases
-
-netbox/
-  ├── client.py       # NetBox API integration
-
-templates/
-  ├── cisco/          # Jinja2 templates
+netbox-network-automation-platform/
+│
+├── README.md
+├── requirements.txt
+├── .env.example
+├── .gitignore
+│
+├── config/                        # Global configs
+│   ├── settings.yaml
+│   ├── logging.yaml
+│
+├── netbox/                        # NetBox integration
+│   ├── client.py
+│   ├── models.py
+│   ├── utils.py
+│
+├── automation/                    # Core automation logic
+│   ├── base/
+│   │   ├── connection.py         # Netmiko / Paramiko abstraction
+│   │   ├── device.py
+│   │
+│   ├── vendors/
+│   │   ├── cisco/
+│   │   │   ├── ios.py
+│   │   │   ├── nxos.py
+│   │   │
+│   │   ├── arista/
+│   │   ├── juniper/
+│   │
+│   ├── services/
+│   │   ├── vlan.py
+│   │   ├── bgp.py
+│   │   ├── interface.py
+│   │
+│   ├── workflows/
+│       ├── deploy_vlan.py
+│       ├── device_onboarding.py
+│       ├── config_backup.py
+│
+├── templates/                     # Jinja2 templates
+│   ├── cisco/
+│   │   ├── vlan.j2
+│   │   ├── base_config.j2
+│
+├── scripts/                       # CLI entry scripts
+│   ├── run_vlan.py
+│   ├── run_backup.py
+│
+├── tests/                         # Unit tests
+│   ├── test_netbox.py
+│   ├── test_vlan.py
+│
+├── docs/                          # Documentation
+│   ├── architecture.md
+│   ├── workflows.md
+│   ├── setup_guide.md
+│
+└── logs/
+    └── automation.log
 ```
 
 ---
