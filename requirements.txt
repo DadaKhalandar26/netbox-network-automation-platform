@@ -1,0 +1,39 @@
+# Core HTTP & API
+
+requests==2.33.1
+
+# NetBox API client
+
+pynetbox==7.6.1
+
+# Network Automation
+
+netmiko==4.6.0
+paramiko==4.0.0
+napalm==5.1.0
+
+# Templating
+
+Jinja2==3.1.6
+
+# Data handling
+
+PyYAML==6.0.3
+
+# Environment management
+
+python-dotenv==1.2.2
+
+# Logging & utilities
+
+rich==15.0.0
+
+# Testing
+
+pytest==9.0.3
+
+# Optional (future scaling)
+
+# nornir==3.5.0
+
+# ansible==13.6.0
