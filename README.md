@@ -2,7 +2,7 @@
 
 ## 🚀 Overview
 
-This project is an enterprise-grade network automation platform built using **Python**, **NetBox**, and **multi-vendor automation frameworks**.
+This project is an network automation platform built using **Python**, **NetBox**, and **multi-vendor automation frameworks**.
 
 It demonstrates how to design and implement a scalable, production-ready automation system using NetBox as the **Source of Truth (SoT)**.
 
