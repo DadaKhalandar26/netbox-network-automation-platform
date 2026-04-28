@@ -40,3 +40,8 @@ def deploy_vlan(device_name: str, vlan_id: int):
         conn.disconnect()
     else:
         print("Connection failed")
+
+def run_dynamic(vlan_id, vlan_name):
+    return {
+        "message": f"VLAN {vlan_id} ({vlan_name}) executed"
+    }

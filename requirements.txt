@@ -37,3 +37,7 @@ pytest==9.0.3
 # nornir==3.5.0
 
 # ansible==13.6.0
+
+# 🔹 API Framework
+fastapi==0.136.2
+uvicorn==0.46.1
